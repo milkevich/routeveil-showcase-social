@@ -9,10 +9,10 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <RouteveilProvider>
-        <RouteveilBadge/>
         <RouteveilView>
           <App />
         </RouteveilView>
+        <RouteveilBadge/>
       </RouteveilProvider>
     </BrowserRouter>
   </StrictMode>
