@@ -1,0 +1,235 @@
+.feed-page__header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  min-height: 66px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+  background: rgb(255, 255, 255);
+}
+
+.feed-page__back {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.feed-page__back:hover {
+  background: #f5f5f5;
+}
+
+.feed-page__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.feed-page__title span {
+  color: #8f949a;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+
+.feed-page__title strong {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.feed-page__header-spacer {
+  width: 40px;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-post {
+  overflow: hidden;
+  border-top: 1px solid var(--border-color);
+  background: var(--background-color);
+}
+
+.feed-post:first-child {
+  border-top: none;
+}
+
+.feed-post__header {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.feed-post__author {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.feed-post__avatar {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.feed-post__author-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feed-post__author-copy > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.feed-post__author-copy strong {
+  overflow: hidden;
+  font-size: 0.91rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feed-post__author-copy svg {
+  fill: #1689e6;
+  stroke: #ffffff;
+  color: #1689e6;
+}
+
+.feed-post__author-copy span {
+  overflow: hidden;
+  color: #8f949a;
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feed-post__more {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted-color);
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.feed-post__more:hover {
+  background: #f5f5f5;
+}
+
+.feed-post__media {
+  width: 100%;
+  max-height: 720px;
+  background: #f5f5f5;
+  object-fit: cover;
+}
+
+.feed-post__content {
+  padding: 12px 14px 16px;
+}
+
+.feed-post__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.feed-post__primary-actions {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.feed-post__actions button {
+  display: grid;
+  min-width: 34px;
+  min-height: 34px;
+  place-items: center;
+  padding: 6px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.feed-post__actions button svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.3px;
+  transition: transform 100ms ease;
+}
+
+.feed-post__actions button:hover {
+  background: #f5f5f5;
+}
+
+.feed-post__actions button:first-child:hover {
+  background-color: #fff1f8;
+}
+
+.feed-post__actions button:first-child:hover svg {
+  fill: #ff59af;
+  color: #ff59af;
+}
+
+.feed-post__actions button:hover svg {
+  transform: scale(0.95);
+}
+
+.feed-post__caption {
+  margin: 11px 0 0;
+  color: var(--foreground-color);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.feed-post__caption strong {
+  color: var(--foreground-color);
+}
+
+.feed-post__date {
+  display: block;
+  margin-top: 7px;
+  padding: 0;
+  color: var(--muted-color);
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+@media (max-width: 560px) {
+  .feed-post__media {
+    max-height: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feed-page__back,
+  .feed-post__more,
+  .feed-post__actions button {
+    transition: none;
+  }
+}

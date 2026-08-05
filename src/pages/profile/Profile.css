@@ -1,0 +1,256 @@
+.profile-card {
+  background: var(--background-color);
+}
+
+.profile__banner {
+  aspect-ratio: 3.5 / 1;
+  overflow: hidden;
+  background: #e8e8e4;
+}
+
+.profile__banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile__avatar-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 0 16px 0 36px;
+}
+
+.profile__avatar {
+  width: 112px;
+  height: 112px;
+  margin-top: -54px;
+  border: 5px solid #ffffff;
+  border-radius: 25px;
+  background: #efefec;
+  object-fit: cover;
+}
+
+.profile__options {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  margin-top: 16px;
+  place-items: center;
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--muted-color);
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.profile__options:hover {
+  background: #f5f5f5;
+}
+
+.profile__biography {
+  max-width: 580px;
+  margin-top: 14px;
+  padding: 0 36px;
+}
+
+.profile__name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.profile__name-row h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.profile__name-row svg {
+  fill: #1689e6;
+  stroke: #ffffff;
+  color: #1689e6;
+}
+
+.profile__username {
+  display: block;
+  margin-top: 5px;
+  color: #747470;
+  font-size: 0.92rem;
+}
+
+.profile__biography p {
+  margin: 16px 0 7px;
+  color: #393936;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.profile__statistics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 28px 0 0;
+  padding: 0;
+  border-block: 1px solid var(--border-color);
+}
+
+.profile__statistics div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 1rem;
+}
+
+.profile__statistics div + div {
+  border-left: 1px solid #e6e6e1;
+}
+
+.profile__statistics dd,
+.profile__statistics dt {
+  margin: 0;
+}
+
+.profile__statistics dd {
+  order: -1;
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.profile__statistics dt {
+  color: #777772;
+  font-size: 0.83rem;
+}
+
+.profile__actions {
+  display: flex;
+  width: 100%;
+  gap: 14px;
+  padding: 16px;
+}
+
+.profile__actions button {
+  display: inline-flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+@supports (corner-shape: squircle) {
+  .profile__avatar,
+  .profile__options {
+    corner-shape: squircle;
+    border-radius: 100%;
+  }
+
+  .profile__actions button {
+    corner-shape: squircle;
+    border-radius: 35px;
+  }
+}
+
+.profile__follow {
+  background: #171717;
+  color: #ffffff;
+}
+
+.profile__follow:hover {
+  background: #2c2c2a;
+}
+
+.profile__message {
+  border: 1px solid #d8d8d4;
+  background: #ffffff;
+}
+
+.profile__message:hover {
+  background: #f7f7f5;
+}
+
+.profile__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #deded9;
+}
+
+.profile-post__link {
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-post {
+  position: relative;
+  aspect-ratio: 2.5 / 3;
+  overflow: hidden;
+  background: #dadad5;
+}
+
+.profile-post__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-post__link:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid #000000;
+  outline-offset: 0;
+}
+
+.profile-post__link:focus-visible img {
+  filter: brightness(50%);
+}
+
+@media (max-width: 640px) {
+  .profile__banner {
+    aspect-ratio: 3 / 1;
+  }
+
+  .profile__avatar {
+    width: 94px;
+    height: 94px;
+    margin-top: -44px;
+    border-width: 4px;
+  }
+
+  .profile__avatar-row {
+    min-height: 62px;
+  }
+
+  .profile__statistics div {
+    padding-right: 14px;
+  }
+
+  .profile__statistics div + div {
+    padding-left: 14px;
+  }
+
+  .profile__actions button {
+    flex: 1;
+    padding: 0 14px;
+  }
+
+  .profile__grid {
+    gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile__options,
+  .profile__actions button {
+    transition: none;
+  }
+}
