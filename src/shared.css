@@ -48,8 +48,8 @@ button {
 }
 
 ::selection {
-  color: #fff;
-  background: #000;
+    color: #fff;
+    background: #000;
 }
 
 img {
@@ -61,4 +61,48 @@ img {
 button:focus-visible {
     outline: 2px solid var(--foreground-color);
     outline-offset: 2px;
+}
+
+.badge-container {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+}
+
+.badge-container img {
+    width: 20px;
+}
+
+.badge-container span {
+    color: var(--muted-color);
+}
+
+.badge-container span a {
+    color: var(--foreground-color);
+    text-decoration: none;
+    text-underline-offset: 5px;
+}
+
+.badge-container span a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .badge-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 12px;
+        background-color: var(--background-color);
+        border-top: 1px solid var(--border-color);
+    }
 }
